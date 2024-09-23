@@ -1,5 +1,5 @@
 def display_events(events):
-    for event in events[:10]:
+    for event in events:
         if event['type'] == 'PushEvent':
             repo = event['repo']['name']
             commits = len(event['payload']['commits'])
