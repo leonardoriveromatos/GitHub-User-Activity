@@ -10,3 +10,5 @@ venv/
 
 # Archivos de logs
 *.log
+
+data.json
