@@ -1,12 +1,14 @@
 def display_events(events):
     for event in events:
-        if event['type'] == 'PushEvent':
-            repo = event['repo']['name']
-            commits = len(event['payload']['commits'])
-            print(f"- Pushed {commits} commits to {repo}")
-        elif event['type'] == 'IssuesEvent':
-            repo = event['repo']['name']
-            print(f"- Opened a new issue in {repo}")
-        elif event['type'] == 'WatchEvent':
-            repo = event['repo']['name']
-            print(f"- Starred {repo}")
+        match event['type']:
+            case 'PushEvent':
+                repo = event['repo']['name']
+                commits = len(event['payload']['commits'])
+                print(f"- Pushed {commits} commits to {repo}")
+            case 'IssuesEvent':
+                repo = event['repo']['name']
+                print(f"- Pushed {commits} commits to {repo}")
+            case 'WatchEvent':
+                repo = event['repo']['name']
+                print(f"- Starred {repo}")
+    return None
